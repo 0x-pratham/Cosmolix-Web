@@ -1,45 +1,43 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { Brain, Code2, Cloud, BarChart3, Monitor, GraduationCap } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { products } from "@/data/products";
 
-const ProductsPreview = () => (
+const services = [
+  { icon: Brain, title: "AI & Machine Learning", desc: "Custom ML models, NLP, computer vision, and predictive analytics tailored to your domain." },
+  { icon: Code2, title: "Custom Software Development", desc: "End-to-end engineering of scalable applications built for performance and reliability." },
+  { icon: Cloud, title: "SaaS & Cloud Platforms", desc: "Cloud-native SaaS products designed for multi-tenancy, scale, and global availability." },
+  { icon: BarChart3, title: "Data Analytics & Research", desc: "Transform raw data into actionable intelligence with advanced analytics pipelines." },
+  { icon: Monitor, title: "IT-Enabled Services", desc: "Enterprise IT solutions including infrastructure modernization and digital transformation." },
+  { icon: GraduationCap, title: "Training & Certification", desc: "Upskill teams with industry-recognized programs in AI, cloud, and cybersecurity." },
+];
+
+const ServicesPreview = () => (
   <section className="section-spacing relative overflow-hidden">
-    <div className="container mx-auto px-4 md:px-8">
+    <div className="absolute inset-0 bg-glow-bottom pointer-events-none" />
+    <div className="container mx-auto px-4 md:px-8 relative z-10">
       <SectionHeader
-        badge="Our Products"
-        title="Intelligent Products, Real Impact"
-        description="Enterprise-grade platforms built with cutting-edge AI to solve complex problems."
+        badge="What We Do"
+        title="Services Built for Scale"
+        description="From AI research to enterprise cloud platforms, we deliver solutions that drive measurable impact."
       />
-      <div className="group relative glass-card-hover p-8 rounded-2xl flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-        {products.map((p, i) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {services.map((s, i) => (
           <motion.div
-            key={p.id}
+            key={s.title}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.12, duration: 0.6, ease: "easeOut" }}
-            className="glass-card-hover p-8 flex flex-col"
+            className="group relative glass-card-hover hover:glow-purple p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1"
           >
-            <div className="mb-4">
-  <span className="text-xs font-semibold tracking-wide uppercase text-primary bg-primary/10 px-3 py-1 rounded-full">
-    Product
-  </span>
+            <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+  <s.icon className="w-6 h-6" strokeWidth={1.8} />
 </div>
-
-<h3 className="text-xl font-semibold text-foreground mb-3">
-  {p.name}
-</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-6">
-              {p.shortDescription}
-            </p>
-            <Link
-              to={`/products/${p.slug}`}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all duration-300 group-hover:gap-3"
-            >
-              View Details <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+            <h3 className="text-xl font-semibold text-foreground mb-3">{s.title}</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-5">{s.desc}</p>
+            <span className="text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+  Learn More →
+</span>
           </motion.div>
         ))}
       </div>
@@ -47,4 +45,4 @@ const ProductsPreview = () => (
   </section>
 );
 
-export default ProductsPreview;
+export default ServicesPreview;

@@ -12,32 +12,46 @@ const services = [
 ];
 
 const ServicesPreview = () => (
-  <section className="section-spacing relative overflow-hidden">
-    <div className="absolute inset-0 bg-glow-bottom pointer-events-none" />
-    <div className="container mx-auto px-4 md:px-8 relative z-10">
+  <section className="section-spacing relative overflow-hidden"
+    style={{ background:"linear-gradient(180deg,#081535 0%,#060e24 100%)" }}>
+    <div className="absolute inset-0 bg-glow pointer-events-none" />
+
+    <div className="container mx-auto px-6 md:px-12 relative z-10">
       <SectionHeader
         badge="What We Do"
         title="Services Built for Scale"
         description="From AI research to enterprise cloud platforms, we deliver solutions that drive measurable impact."
       />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {services.map((s, i) => (
-          <motion.div
-            key={s.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.12, duration: 0.6, ease: "easeOut" }}
-            className="group relative glass-card-hover hover:glow-purple p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1"
-          >
-            <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-  <s.icon className="w-6 h-6" strokeWidth={1.8} />
-</div>
-            <h3 className="text-xl font-semibold text-foreground mb-3">{s.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-5">{s.desc}</p>
-            <span className="text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-  Learn More →
-</span>
+          <motion.div key={s.title}
+            initial={{ opacity:0,y:28 }} whileInView={{ opacity:1,y:0 }}
+            viewport={{ once:true }} transition={{ delay:i*0.1,duration:0.55,ease:"easeOut" }}
+            className="cx-card group p-7 flex flex-col">
+
+            {/* icon */}
+            <div className="w-11 h-11 flex items-center justify-center rounded-xl mb-5 transition-all duration-300"
+              style={{ background:"rgba(37,99,235,0.15)", border:"1px solid rgba(56,189,248,0.18)" }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLElement).style.background = "rgba(37,99,235,0.35)";
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLElement).style.background = "rgba(37,99,235,0.15)";
+              }}>
+              <s.icon className="w-5 h-5" strokeWidth={1.8} style={{ color:"#38bdf8" }} />
+            </div>
+
+            <h3 className="text-base font-bold text-white mb-2" style={{ fontFamily:"'Syne',sans-serif" }}>
+              {s.title}
+            </h3>
+            <p className="text-sm leading-relaxed flex-1" style={{ color:"rgba(148,163,184,0.75)" }}>
+              {s.desc}
+            </p>
+            <span className="mt-5 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              style={{ color:"#38bdf8" }}>
+              Learn More →
+            </span>
           </motion.div>
         ))}
       </div>
