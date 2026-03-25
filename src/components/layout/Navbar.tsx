@@ -58,19 +58,25 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-full px-6 md:px-10">
-        {/* Logo - Updated to use local logo.png */}
         <Link
           to="/"
-          className="flex items-center transition-transform duration-300 hover:scale-[1.02]"
+          className="flex items-center gap-3 transition-transform duration-300 hover:scale-[1.02] group/logo"
         >
-          <img
-            src="/logo.png" 
-            alt="Cosmolix"
-            className="h-10 md:h-12 w-auto object-contain"
-          />
+          <div className="relative h-10 w-10 md:h-11 md:w-11 rounded-xl overflow-hidden border border-white/10 bg-white/5 p-1 shadow-2xl transition-all duration-300 group-hover/logo:border-cosmo-blue/50">
+            <img
+              src="/logo.png" 
+              alt="Cosmolix Logo"
+              className="h-full w-full object-contain rounded-lg"
+            />
+          </div>
+          <span className="text-xl md:text-2xl font-extrabold tracking-tighter text-white flex flex-col leading-none">
+            Cosmolix
+            <span className="text-[8px] uppercase tracking-[0.3em] text-cosmo-blue font-bold opacity-80">
+              Pvt Ltd
+            </span>
+          </span>
         </Link>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => {
             const isActive =
