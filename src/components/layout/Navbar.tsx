@@ -71,9 +71,6 @@ const Navbar = () => {
           </div>
           <span className="text-xl md:text-2xl font-extrabold tracking-tighter text-white flex flex-col leading-none">
             Cosmolix
-            <span className="text-[8px] uppercase tracking-[0.3em] text-cosmo-blue font-bold opacity-80">
-              Pvt Ltd
-            </span>
           </span>
         </Link>
 
