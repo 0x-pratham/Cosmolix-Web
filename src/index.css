@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* REPLACE ALL of :root with this */
+:root {
+  --blue-primary:  #2563EB;
+  --blue-light:    #3B82F6;
+  --green-accent:  #10B981;
+  --green-light:   #34D399;
+  --bg-white:      #FAFAF8;
+  --bg-section:    #F0F4FF;
+  --text-dark:     #0F172A;
+  --text-mid:      #334155;
+  --text-muted:    #94A3B8;
+  --border:        rgba(37,99,235,0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg-white);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-dark);
+}
+
+html { scroll-behavior: smooth; }
+
+::selection {
+  background: rgba(37,99,235,0.12);
+  color: var(--text-dark);
+}
