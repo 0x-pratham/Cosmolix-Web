@@ -128,7 +128,7 @@ initial={{ scale:0.8, opacity:0 }}
 animate={{ scale:1, opacity:1 }}
 transition={{ duration:0.4, delay:0.4 }}
 >
-₹250
+₹4999
 </motion.h2>
 
 
@@ -154,7 +154,7 @@ whileTap={{ scale:0.97 }}
 onClick={openRazorpayPayment}
 className="mt-8 w-full bg-gradient-to-r from-primary to-accent text-white py-3 rounded-lg font-semibold shadow-md"
 >
-Pay ₹250 with Razorpay
+Pay ₹4999 with Razorpay
 </motion.button>
 
 

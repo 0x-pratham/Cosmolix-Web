@@ -10,7 +10,7 @@ export const openRazorpayPayment = () => {
 
     key: "RAZORPAY_KEY_ID",
 
-    amount: 25000,
+    amount: 4999,
 
     currency: "INR",
 

@@ -33,7 +33,7 @@ const InternshipPayment = () => {
             </p>
 
             <h2 className="text-3xl font-bold">
-              ₹250
+              ₹4999
             </h2>
 
           </div>

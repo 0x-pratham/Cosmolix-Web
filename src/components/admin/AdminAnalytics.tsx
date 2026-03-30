@@ -42,7 +42,7 @@ const unpaid = applications.filter(
 a=>!a.payment_status || a.payment_status==="unpaid"
 ).length
 
-const revenue = paid * 250
+const revenue = paid * 4999
 const approved = applications.filter(a=>a.status==="approved").length
 const rejected = applications.filter(a=>a.status==="rejected").length
 const pending = applications.filter(a=>!a.status || a.status==="pending").length
