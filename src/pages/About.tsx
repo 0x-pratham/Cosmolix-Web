@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Lightbulb, FlaskConical, Building2, Target, Eye } from 'lucide-react'
-import Navbar from './Navbar'
-import Footer from './Footer'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 // ── Reusable fade-in hook ──
 function useFadeIn(threshold = 0.15) {
