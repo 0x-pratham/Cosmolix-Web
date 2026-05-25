@@ -10,6 +10,8 @@ import {
   GraduationCap,
   ArrowRight,
   Sparkles,
+  Gamepad2,
+  ShieldCheck,
 } from "lucide-react";
 
 const services = [
@@ -43,6 +45,16 @@ const services = [
     title: "Training & Certification",
     desc: "Upskill teams with industry-recognized programs in AI, Cloud, and Security.",
   },
+  {
+  icon: Gamepad2,
+  title: "Game Development & Interactive Experiences",
+  desc: "Building immersive 2D/3D, multiplayer, AR/VR, and cross-platform gaming solutions with scalable architectures and engaging gameplay systems.",
+},
+{
+  icon: ShieldCheck,
+  title: "Game Testing & Quality Assurance",
+  desc: "Comprehensive gameplay testing, performance optimization, multiplayer validation, and device compatibility assurance for flawless player experiences.",
+},
 ];
 
 function ServiceNode({ service, index, isLeft }: { service: (typeof services)[0]; index: number; isLeft: boolean }) {
